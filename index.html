@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary — Across Every Universe ♥</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Bouncy Cute Comic & Handwritten Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --spidey-red: #ff3b5c;
+      --spidey-red-dark: #d92343;
+      --spidey-blue: #3b82f6;
+      --spidey-navy: #1e1b2e;
+      --gwen-pink: #ff85b3;
+      --gwen-cyan: #38bdf8;
+      --comic-cream: #fff9f5;
+      --comic-yellow: #fde047;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Fredoka', sans-serif;
+      background-color: #ffeef4;
+      background-image:
+        radial-gradient(#ff85b3 1.4px, transparent 1.4px),
+        radial-gradient(#38bdf8 1.4px, #fff7fa 1.4px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+      color: var(--spidey-navy);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .font-bangers {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 1.5px;
+    }
+
+    .font-patrick {
+      font-family: 'Patrick Hand', cursive;
+    }
+
+    .font-caveat {
+      font-family: 'Caveat', cursive;
+    }
+
+    /* Main Comic Book App Shell */
+    .comic-shell {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--comic-cream);
+      border-left: 3px solid var(--spidey-navy);
+      border-right: 3px solid var(--spidey-navy);
+      box-shadow: 0 20px 50px rgba(30, 27, 46, 0.2);
+      overflow-x: hidden;
+      z-index: 2;
+    }
+
+    @media (min-width: 640px) {
+      .comic-shell {
+        min-height: calc(100vh - 2rem);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 3px solid var(--spidey-navy);
+        border-radius: 32px;
+      }
+    }
+
+    /* Comic Panel Card Style */
+    .comic-card {
+      background: #ffffff;
+      border: 3px solid var(--spidey-navy);
+      border-radius: 22px;
+      box-shadow: 5px 5px 0px var(--spidey-navy);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+    }
+
+    .comic-card:hover {
+      transform: translate(-1px, -2px);
+      box-shadow: 7px 7px 0px var(--spidey-navy);
+    }
+
+    /* Cute Comic Button */
+    .comic-btn {
+      border: 2.5px solid var(--spidey-navy);
+      box-shadow: 3px 3px 0px var(--spidey-navy);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      cursor: pointer;
+    }
+
+    .comic-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px var(--spidey-navy);
+    }
+
+    .comic-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--spidey-navy);
+    }
+
+    /* Realistic Spider-Man New York Night Skyline Hero Background */
+    .spiderverse-hero-bg {
+      background-color: #0f172a;
+      background-image:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.38) 0%, rgba(153, 27, 27, 0.52) 52%, rgba(15, 23, 42, 0.88) 100%),
+        radial-gradient(circle at 22% 28%, rgba(239, 68, 68, 0.42), transparent 55%),
+        radial-gradient(circle at 80% 32%, rgba(56, 189, 248, 0.38), transparent 55%),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/New_York_Midtown_Skyline_at_night_-_Jan_2006_edit1.jpg?width=1000');
+      background-size: cover;
+      background-position: center 45%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spiderverse-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14), transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Realistic Character Portrait Frame Animations */
+    @keyframes swingUpsideDown {
+
+      0%,
+      100% {
+        transform: rotate(-4deg) translateY(0px);
+      }
+
+      50% {
+        transform: rotate(4deg) translateY(-4px);
+      }
+    }
+
+    .spidey-swing-pivot {
+      transform-origin: top center;
+      animation: swingUpsideDown 3.6s ease-in-out infinite;
+    }
+
+    @keyframes floatBob {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(3deg);
+      }
+
+      50% {
+        transform: translateY(-7px) rotate(5deg);
+      }
+    }
+
+    .gwen-float {
+      animation: floatBob 3.2s ease-in-out infinite;
+    }
+
+    .real-character-card {
+      position: relative;
+      border: 3px solid #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.55),
+        0 0 0 2.5px #1e1b2e;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .real-character-card:active {
+      transform: scale(0.95);
+    }
+
+    /* Equalizer Bars for Sunflower Backsound */
+    @keyframes eqBounce {
+
+      0%,
+      100% {
+        height: 5px;
+      }
+
+      50% {
+        height: 16px;
+      }
+    }
+
+    .eq-bar {
+      width: 3.5px;
+      border-radius: 999px;
+      background: #ff3b5c;
+      height: 5px;
+    }
+
+    .eq-playing .eq-bar:nth-child(1) {
+      animation: eqBounce 0.55s ease-in-out infinite;
+    }
+
+    .eq-playing .eq-bar:nth-child(2) {
+      animation: eqBounce 0.4s ease-in-out infinite 0.15s;
+    }
+
+    .eq-playing .eq-bar:nth-child(3) {
+      animation: eqBounce 0.65s ease-in-out infinite 0.25s;
+    }
+
+    .eq-playing .eq-bar:nth-child(4) {
+      animation: eqBounce 0.48s ease-in-out infinite 0.1s;
+    }
+
+    @keyframes pulseHeart {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    .heart-beat {
+      animation: pulseHeart 1.3s ease-in-out infinite;
+    }
+
+    /* Interactive Web Shoot Line Overlay */
+    #web-shooter-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    /* Comic Sound Pop ("THWIP!", "LOVE!", "POW!") */
+    @keyframes comicPopBurst {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3) rotate(-15deg);
+      }
+
+      35% {
+        opacity: 1;
+        transform: translate(-50%, -75%) scale(1.15) rotate(6deg);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -135%) scale(0.95) rotate(-4deg);
+      }
+    }
+
+    .comic-sfx-badge {
+      position: fixed;
+      pointer-events: none;
+      z-index: 60;
+      font-family: 'Bangers', cursive;
+      font-size: 1.35rem;
+      padding: 2px 10px;
+      border-radius: 12px;
+      border: 2.5px solid #1e1b2e;
+      box-shadow: 3px 3px 0 #1e1b2e;
+      animation: comicPopBurst 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Flip Cards for "Reasons I Love You" */
+    .flip-card {
+      perspective: 900px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 18px;
+      border: 2.5px solid var(--spidey-navy);
+      box-shadow: 4px 4px 0 var(--spidey-navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Polaroid Photo Framing */
+    .couple-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 27, 46, 0.65);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 70;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+      animation: modalFadeIn 0.22s ease-out forwards;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Fullscreen Web-Shooter Canvas Effect -->
+  <canvas id="web-shooter-canvas"></canvas>
+
+  <!-- Toast Feedback Pill -->
+  <div id="toast-pill"
+    class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-[#1e1b2e] text-white px-4 py-2 rounded-full border-2 border-[#fde047] shadow-xl text-sm font-medium flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 z-[85]">
+    <span id="toast-icon">🕷️</span>
+    <span id="toast-msg">THWIP! Surprise unlocked!</span>
+  </div>
+
+  <!-- Main Comic Book App Container -->
+  <main class="comic-shell pb-10">
+    <!-- Top Floating Bar: Sunflower Backsound Toggle & Universe Badge -->
+    <header
+      class="sticky top-0 z-30 bg-[#fff9f5]/90 backdrop-blur-md border-b-2 border-[#1e1b2e] px-3.5 py-2.5 flex items-center justify-between gap-2">
+      <button id="music-toggle-btn" type="button"
+        class="comic-btn bg-[#fde047] text-[#1e1b2e] px-3.5 py-1 rounded-full text-xs font-bold flex items-center gap-1.5">
+        <span id="music-icon">🌻</span>
+        <span id="music-label">Play Sunflower</span>
+      </button>
+
+      <span
+        class="bg-[#ff3b5c] text-white border-2 border-[#1e1b2e] px-3 py-1 rounded-full text-xs font-bold shadow-[2px_2px_0_#1e1b2e]">
+        Peter &amp; MJ • Universe #143 ♥
+      </span>
+    </header>
+
+    <!-- =====================================================================
+         HERO SECTION: REALISTIC SPIDER-MAN & SPIDER-GWEN NIGHT SKYLINE
+         ===================================================================== -->
+    <section class="spiderverse-hero-bg px-4 pt-3 pb-6 border-b-3 border-[#1e1b2e] text-white">
+      <!-- Comic Issue Badge -->
+      <div class="flex items-center justify-between relative z-10">
+        <span
+          class="bg-[#fde047] text-[#1e1b2e] border-2 border-[#1e1b2e] rounded-lg px-2.5 py-0.5 font-bangers text-sm shadow-[2px_2px_0_#1e1b2e]">
+          SPIDER-VERSE • LOVE EDITION
+        </span>
+        <span
+          class="bg-white/95 text-[#dc2626] border-2 border-[#1e1b2e] rounded-full px-3 py-0.5 text-xs font-bold shadow-[2px_2px_0_#1e1b2e]">
+          Tap layar untuk THWIP! 🕸️
+        </span>
+      </div>
+
+      <!-- Realistic Spider-Man & MJ Character Stage -->
+      <div class="relative h-60 mt-2 flex items-center justify-center gap-3">
+        <!-- Web String Suspension Line -->
+        <div class="absolute top-0 left-1/2 -translate-x-12 w-0.5 h-8 bg-white/80 shadow-[0_0_8px_#fff]"></div>
+
+        <!-- Realistic Spider-Man Portrait Card (Tap for Love Burst!) -->
+        <div id="chibi-spidey-btn" class="spidey-swing-pivot relative z-20 cursor-pointer select-none"
+          title="Tap Spider-Man!">
+          <div class="real-character-card w-36 h-44 bg-[#1e1b2e]">
+            <img src="https://i.pinimg.com/736x/25/12/0a/25120a58f238dc0c922bcbd98508e4da.jpg"
+              referrerpolicy="no-referrer"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x360/dc2626/ffffff?text=Spider-Man+%E2%99%A5';"
+              alt="Peter Parker / Spider-Man" class="w-full h-full object-cover object-top" />
+            <div
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent px-2.5 py-1.5 flex items-center justify-between">
+              <span class="font-bangers text-sm tracking-wider text-[#fde047]">SPIDER-MAN</span>
+              <span id="spidey-heart-badge" class="text-sm transition-transform">🕷️</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Realistic MJ Portrait Card -->
+        <div id="chibi-gwen-btn" class="gwen-float relative z-20 cursor-pointer select-none mt-4" title="Tap MJ!">
+          <div class="real-character-card w-32 h-40 bg-[#1e1b2e]">
+            <img src="https://i.pinimg.com/1200x/48/a3/09/48a30914cf111e805dac86fc385af7f4.jpg"
+              referrerpolicy="no-referrer"
+              onerror="this.onerror=null;this.src='https://placehold.co/300x360/ec4899/ffffff?text=MJ+%F0%9F%92%96';"
+              alt="MJ" class="w-full h-full object-cover object-top" />
+            <div
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent px-2.5 py-1.5 flex items-center justify-between">
+              <span class="font-bangers text-xs tracking-wider text-[#ff85b3]">MJ (ZENDAYA)</span>
+              <span class="text-xs heart-beat">💖</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Title & Couple Names -->
+      <div class="relative z-10 text-center mt-1">
+        <div
+          class="inline-block bg-[#fde047] text-[#1e1b2e] border-2.5 border-[#1e1b2e] px-4 py-1 rounded-2xl shadow-[4px_4px_0_#1e1b2e] transform -rotate-1">
+          <h1 class="font-bangers text-3xl sm:text-4xl tracking-wider leading-none">
+            HAPPY ANNIVERSARY!
+          </h1>
+        </div>
+        <p id="hero-couple-subtitle" class="mt-2.5 text-lg font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
+          Spidey &amp; <span id="partner-name-hero" class="underline decoration-[#fde047] decoration-wavy">Sayang</span>
+          • Universe #143 🕸️♥
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SOUNDTRACK BAR: "SUNFLOWER" — SPIDER-MAN: INTO THE SPIDER-VERSE
+         ===================================================================== -->
+    <section class="px-4 mt-4">
+      <div
+        class="comic-card p-3 bg-gradient-to-r from-[#fef9c3] via-[#fffbeb] to-[#ffe4e6] flex items-center justify-between gap-2.5">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <button id="sunflower-card-play-btn" type="button"
+            class="comic-btn w-11 h-11 shrink-0 rounded-full bg-[#ff3b5c] text-white flex items-center justify-center text-lg font-bold"
+            title="Play / Pause Sunflower">
+            <span id="sunflower-play-symbol">▶</span>
+          </button>
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5">
+              <span class="font-bangers text-base text-[#1e1b2e] tracking-wide truncate">
+                🌻 SUNFLOWER — POST MALONE &amp; SWAE LEE
+              </span>
+              <div id="sunflower-eq" class="flex items-end gap-0.5 h-4 shrink-0">
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+              </div>
+            </div>
+            <p id="sunflower-track-subtitle" class="text-[11px] font-medium text-slate-600 truncate">
+              OST Spider-Man: Into the Spider-Verse • Tap ▶ untuk putar lagu asli
+            </p>
+          </div>
+        </div>
+
+        <span
+          class="shrink-0 bg-[#fde047] text-[#1e1b2e] border-2 border-[#1e1b2e] px-2.5 py-1 rounded-xl font-bangers text-xs shadow-[2px_2px_0_#1e1b2e]">
+          OST ♥
+        </span>
+      </div>
+      <!-- Real Audio Stream Player for Sunflower (Post Malone & Swae Lee) -->
+      <audio id="sunflower-audio-player" autoplay preload="auto" loop crossorigin="anonymous"
+        src="https://archive.org/download/post-malone-swae-lee-sunflower-spider-man-int-mp-3-128-k/Post%20Malone%2C%20Swae%20Lee%20-%20Sunflower%20%28Spider-Man_%20Into%20the%20Spider-Verse%29%28MP3_128K%29.mp3"></audio>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 1: SPIDEY-SENSE LIVE LOVE TIMER
+         ===================================================================== -->
+    <section class="px-4 mt-5">
+      <div class="comic-card p-4 bg-gradient-to-r from-[#fff5f8] to-[#f0f9ff]">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#ff3b5c] flex items-center gap-1">
+            <span>⚡</span> Spidey-Sense Love Timer
+          </span>
+          <span id="anniv-date-badge"
+            class="text-[11px] font-bold bg-[#fde047] px-2 py-0.5 rounded-full border border-[#1e1b2e]">
+            Since Day 1 ♥
+          </span>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 text-center">
+          <div class="bg-white border-2 border-[#1e1b2e] rounded-xl py-2 shadow-[2px_2px_0_#1e1b2e]">
+            <div id="timer-days" class="font-bangers text-2xl text-[#ff3b5c]">365</div>
+            <div class="text-[11px] font-bold text-slate-600">Hari</div>
+          </div>
+          <div class="bg-white border-2 border-[#1e1b2e] rounded-xl py-2 shadow-[2px_2px_0_#1e1b2e]">
+            <div id="timer-hours" class="font-bangers text-2xl text-[#3b82f6]">00</div>
+            <div class="text-[11px] font-bold text-slate-600">Jam</div>
+          </div>
+          <div class="bg-white border-2 border-[#1e1b2e] rounded-xl py-2 shadow-[2px_2px_0_#1e1b2e]">
+            <div id="timer-mins" class="font-bangers text-2xl text-[#ec4899]">00</div>
+            <div class="text-[11px] font-bold text-slate-600">Menit</div>
+          </div>
+          <div class="bg-white border-2 border-[#1e1b2e] rounded-xl py-2 shadow-[2px_2px_0_#1e1b2e]">
+            <div id="timer-secs" class="font-bangers text-2xl text-[#1e1b2e]">00</div>
+            <div class="text-[11px] font-bold text-slate-600">Detik</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 2: SECRET WEB LOVE LETTER (SURAT CINTA KOMIK)
+         ===================================================================== -->
+    <section class="px-4 mt-5">
+      <div class="comic-card p-5 relative overflow-hidden">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-2">
+            <span
+              class="w-9 h-9 rounded-full bg-[#ff3b5c] text-white border-2 border-[#1e1b2e] flex items-center justify-center text-lg shadow-[2px_2px_0_#1e1b2e]">
+              💌
+            </span>
+            <div>
+              <h2 class="font-bold text-base leading-tight">Secret Spidey Note</h2>
+              <p class="text-xs text-slate-500">Tap amplop di bawah untuk buka pesan!</p>
+            </div>
+          </div>
+          <span
+            class="font-bangers text-sm bg-[#ff85b3] px-2.5 py-0.5 rounded-lg border-2 border-[#1e1b2e] transform rotate-3">
+            FOR YOU!
+          </span>
+        </div>
+
+        <button id="open-love-letter-btn" type="button"
+          class="comic-btn w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-[#ff3b5c] to-[#ff6b8b] text-white flex items-center justify-between">
+          <div class="text-left">
+            <p class="font-bangers text-xl tracking-wide">BUKA SURAT ANNIVERSARY ♥</p>
+            <p class="text-xs text-white/90">“In every other universe, I’d still choose you.”</p>
+          </div>
+          <span class="text-3xl heart-beat">🕸️💖</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: MULTIVERSE POLAROID GALLERY (TOM HOLLAND & MJ)
+         ===================================================================== -->
+    <section class="px-4 mt-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-bangers text-2xl text-[#1e1b2e] flex items-center gap-1.5">
+          <span>🕸️</span> PETER &amp; MJ MEMORIES
+        </h2>
+        <span class="text-xs font-bold text-[#ff3b5c]">
+          Spider-Verse Edition ♥
+        </span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3.5">
+        <!-- Polaroid 1: Far From Home — Airplane Sleep Scene -->
+        <div class="comic-card p-2.5 pb-3 bg-white transform -rotate-2">
+          <div id="polaroid-img-0"
+            class="w-full h-36 rounded-xl overflow-hidden bg-[#ffe4ed] border-2 border-[#1e1b2e]"></div>
+          <p class="font-caveat text-lg font-bold text-center mt-1.5 text-[#1e1b2e]">
+            Sleepy Flight Together ♥
+          </p>
+        </div>
+
+        <!-- Polaroid 2: Mirror Selfie in Spider-Man Suit -->
+        <div class="comic-card p-2.5 pb-3 bg-white transform rotate-2">
+          <div id="polaroid-img-1"
+            class="w-full h-36 rounded-xl overflow-hidden bg-[#e0f2fe] border-2 border-[#1e1b2e]"></div>
+          <p class="font-caveat text-lg font-bold text-center mt-1.5 text-[#1e1b2e]">
+            Spidey Mirror Selfie 📸
+          </p>
+        </div>
+
+        <!-- Polaroid 3: Lying Side by Side -->
+        <div class="comic-card p-2.5 pb-3 bg-white transform rotate-1">
+          <div id="polaroid-img-2"
+            class="w-full h-36 rounded-xl overflow-hidden bg-[#fef9c3] border-2 border-[#1e1b2e]"></div>
+          <p class="font-caveat text-lg font-bold text-center mt-1.5 text-[#1e1b2e]">
+            Lazy Afternoon Chill ✨
+          </p>
+        </div>
+
+        <!-- Polaroid 4: No Way Home — Forehead Touch in Lab -->
+        <div class="comic-card p-2.5 pb-3 bg-white transform -rotate-1">
+          <div id="polaroid-img-3"
+            class="w-full h-36 rounded-xl overflow-hidden bg-[#fce7f3] border-2 border-[#1e1b2e]"></div>
+          <p class="font-caveat text-lg font-bold text-center mt-1.5 text-[#1e1b2e]">
+            Always &amp; Forever 💖
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: FLIP CARDS — "WHY MY SPIDEY-SENSE TINGLES FOR YOU"
+         ===================================================================== -->
+    <section class="px-4 mt-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-bangers text-2xl text-[#1e1b2e]">
+          ⚡ TAP KARTU LUCU INI!
+        </h2>
+        <span class="text-xs font-bold text-slate-500">Tap untuk balik kartu</span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3" id="flip-cards-grid">
+        <!-- Card 1 -->
+        <div class="flip-card h-36" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-face bg-[#ff3b5c] text-white">
+              <span class="text-3xl mb-1">🕷️</span>
+              <span class="font-bangers text-lg tracking-wide">ALASAN #01</span>
+              <span class="text-[11px] opacity-90">Tap aku!</span>
+            </div>
+            <div class="flip-face flip-back bg-[#fff5f8] text-[#1e1b2e]">
+              <p class="font-patrick text-base leading-snug">
+                Senyum kamu selalu bikin hari-hariku yang capek langsung sembuh 100%! ♥
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flip-card h-36" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-face bg-[#3b82f6] text-white">
+              <span class="text-3xl mb-1">🕸️</span>
+              <span class="font-bangers text-lg tracking-wide">ALASAN #02</span>
+              <span class="text-[11px] opacity-90">Tap aku!</span>
+            </div>
+            <div class="flip-face flip-back bg-[#f0f9ff] text-[#1e1b2e]">
+              <p class="font-patrick text-base leading-snug">
+                Sama kamu, ngobrol hal random pun rasanya jadi petualangan paling seru!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flip-card h-36" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-face bg-[#ff85b3] text-[#1e1b2e]">
+              <span class="text-3xl mb-1">💖</span>
+              <span class="font-bangers text-lg tracking-wide">ALASAN #03</span>
+              <span class="text-[11px]">Tap aku!</span>
+            </div>
+            <div class="flip-face flip-back bg-[#fff5f8] text-[#1e1b2e]">
+              <p class="font-patrick text-base leading-snug">
+                Kamu itu rumah paling nyaman buat aku pulang di alam semesta mana pun.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flip-card h-36" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-face bg-[#fde047] text-[#1e1b2e]">
+              <span class="text-3xl mb-1">✨</span>
+              <span class="font-bangers text-lg tracking-wide">ALASAN #04</span>
+              <span class="text-[11px]">Tap aku!</span>
+            </div>
+            <div class="flip-face flip-back bg-[#fefce8] text-[#1e1b2e]">
+              <p class="font-patrick text-base leading-snug">
+                Terima kasih sudah sabar, lucu, dan selalu ada buat aku. Love you 3000!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 5: MINI-GAME LUCU "CATCH SPIDEY'S HEARTS!"
+         ===================================================================== -->
+    <section class="px-4 mt-6">
+      <div class="comic-card p-4 bg-[#fffdf7]">
+        <div class="flex items-center justify-between mb-2">
+          <div>
+            <h2 class="font-bangers text-xl text-[#ff3b5c] leading-none">
+              🎮 MINI-GAME: TANGKAP HATI SPIDEY!
+            </h2>
+            <p class="text-xs text-slate-600 mt-0.5">
+              Kumpulkan <b>10 Hati</b> untuk buka Kupon Hadiah Rahasia!
+            </p>
+          </div>
+          <div class="bg-[#fde047] border-2 border-[#1e1b2e] px-2.5 py-1 rounded-xl font-bangers text-base">
+            ♥ <span id="game-score-display">0</span>/10
+          </div>
+        </div>
+
+        <!-- Interactive Game Canvas Container -->
+        <div
+          class="relative w-full h-56 rounded-2xl overflow-hidden border-2.5 border-[#1e1b2e] bg-gradient-to-b from-[#dbeafe] via-[#eff6ff] to-[#ffe4e6]">
+          <canvas id="spidey-mini-game" class="w-full h-full block"></canvas>
+
+          <!-- Start / Win Overlay -->
+          <div id="game-overlay"
+            class="absolute inset-0 bg-[#1e1b2e]/65 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 text-center text-white">
+            <p id="game-overlay-title" class="font-bangers text-2xl text-[#fde047] tracking-wide">
+              SIAP TANGKAP HATI? 🕸️💖
+            </p>
+            <p id="game-overlay-desc" class="text-xs mt-1 mb-3 max-w-[240px]">
+              Geser layar / pakai tombol kiri-kanan untuk bantu Chibi Spidey menangkap hati &amp; boba!
+            </p>
+            <button id="start-game-btn" type="button"
+              class="comic-btn bg-[#ff3b5c] text-white px-5 py-2 rounded-full font-bangers text-lg tracking-wider">
+              MULAI MAIN!
+            </button>
+          </div>
+        </div>
+
+        <!-- Touch Controls for Mobile -->
+        <div class="grid grid-cols-2 gap-3 mt-3">
+          <button id="btn-move-left" type="button"
+            class="comic-btn bg-[#38bdf8] text-[#1e1b2e] py-2 rounded-xl font-bangers text-lg active:bg-[#0284c7] active:text-white select-none">
+            ◀ GESER KIRI
+          </button>
+          <button id="btn-move-right" type="button"
+            class="comic-btn bg-[#ff85b3] text-[#1e1b2e] py-2 rounded-xl font-bangers text-lg active:bg-[#db2777] active:text-white select-none">
+            GESER KANAN ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Sign-Off -->
+    <footer class="text-center mt-8 px-4">
+      <p class="font-bangers text-xl text-[#1e1b2e] tracking-wide">
+        “WITH GREAT LOVE COMES GREAT HAPPINESS” 🕸️♥
+      </p>
+      <p class="text-xs text-slate-500 mt-1">
+        Made with love just for you • Happy Anniversary!
+      </p>
+    </footer>
+  </main>
+
+  <!-- =========================================================================
+       MODAL 1: LOVE LETTER & SECRET VOUCHER
+       ========================================================================= -->
+  <div id="modal-letter" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="comic-card w-full max-w-md bg-[#fffdf9] overflow-hidden">
+      <div class="bg-[#ff3b5c] text-white px-5 py-3.5 border-b-3 border-[#1e1b2e] flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🕷️💌</span>
+          <h3 id="letter-modal-title" class="font-bangers text-2xl tracking-wide">
+            HAPPY ANNIVERSARY, SAYANG!
+          </h3>
+        </div>
+        <button type="button" data-close-modal="modal-letter"
+          class="w-8 h-8 rounded-full bg-white text-[#1e1b2e] border-2 border-[#1e1b2e] font-bold flex items-center justify-center">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-5 max-h-[68vh] overflow-y-auto">
+        <p id="letter-modal-body" class="font-patrick text-xl text-[#1e1b2e] leading-relaxed whitespace-pre-line">
+          Happy Anniversary, Sayang! ♥
+
+          Kalau aku bisa milih ulang dari ribuan alam semesta di Spider-Verse, aku bakal tetap milih kamu di setiap
+          semesta itu.
+
+          Terima kasih sudah jadi partner paling lucu, paling sabar, dan selalu bikin aku merasa jadi orang paling
+          beruntung di dunia. Semoga kita terus bareng-bareng sampai tua nanti ya!
+        </p>
+
+        <div class="mt-5 pt-3 border-t-2 border-dashed border-[#ff85b3] flex items-center justify-between">
+          <span class="text-xs font-bold text-[#ff3b5c]">🕸️ Universe #143</span>
+          <span id="letter-modal-sign" class="font-caveat text-2xl font-bold text-[#1e1b2e]">
+            Your Friendly Neighborhood Boyfriend ♥
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: GAME WIN LOVE VOUCHER REWARD
+       ========================================================================= -->
+  <div id="modal-voucher" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="comic-card w-full max-w-sm bg-[#fefce8] p-6 text-center relative">
+      <button type="button" data-close-modal="modal-voucher"
+        class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border-2 border-[#1e1b2e] font-bold">
+        ✕
+      </button>
+
+      <div class="text-4xl mb-2">🎟️💖🕷️</div>
+      <span class="bg-[#ff3b5c] text-white text-xs font-bold px-3 py-1 rounded-full border-2 border-[#1e1b2e]">
+        ACHIEVEMENT UNLOCKED!
+      </span>
+      <h3 class="font-bangers text-3xl text-[#1e1b2e] mt-3">
+        GOLDEN DATE VOUCHER!
+      </h3>
+      <p class="font-patrick text-lg text-slate-700 mt-2">
+        Selamat! Kamu berhasil menangkap 10 hati Spidey. Voucher ini berlaku untuk:
+      </p>
+
+      <div
+        class="my-4 p-3.5 rounded-2xl bg-white border-2.5 border-dashed border-[#ff3b5c] text-left space-y-1.5 font-patrick text-lg">
+        <div>✅ <b>1x Bebas Pilih Makanan &amp; Boba</b></div>
+        <div>✅ <b>Pelukan &amp; Manja Sepuasnya</b></div>
+        <div>✅ <b>Movie / Jalan-Jalan Date Berdua</b></div>
+      </div>
+
+      <button type="button" data-close-modal="modal-voucher"
+        class="comic-btn w-full py-2.5 rounded-full bg-[#38bdf8] text-[#1e1b2e] font-bangers text-xl tracking-wide">
+        KLAIM HADIAH SEKARANG! ♥
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       INTERACTIVE SCRIPT: WEB SHOOTER, CHIBI REACTIONS, MINI-GAME & SUNFLOWER AUDIO
+       ========================================================================= -->
+  <script>
+    (function () {
+      // Konfigurasi default langsung dari kode (Nama, Tanggal Jadian, Surat, & URL Foto Tom Holland + MJ)
+      const GIFT_CONFIG = {
+        partnerName: 'Sayang',
+        annivDate: '2023-11-27', // <-- GANTI TANGGAL JADIAN DI SINI (Format: 'TAHUN-BULAN-TANGGAL', contoh: '2024-08-17')
+        letterBody:
+          'Happy Anniversary, Sayang! ♥\n\nKalau aku bisa milih ulang dari ribuan alam semesta di Spider-Verse, aku bakal tetap milih kamu di setiap semesta itu — persis kayak Peter yang selalu balik ke MJ.\n\nTerima kasih sudah jadi partner paling lucu, paling sabar, dan selalu bikin aku merasa jadi orang paling beruntung di dunia. Semoga kita terus bareng-bareng sampai tua nanti ya!',
+        letterSign: 'Your Friendly Neighborhood Boyfriend ♥',
+        photos: [
+          {
+            src: 'https://i.pinimg.com/736x/17/53/05/175305f2182a33d282467ed83233bc1b.jpg',
+            fallback: 'https://placehold.co/400x400/ff3b5c/ffffff?text=Peter+%26+MJ+%231',
+            alt: 'Peter Parker dan MJ tidur bersandar di pesawat'
+          },
+          {
+            src: 'https://i.pinimg.com/736x/73/60/0e/73600eb61fcfd01152a4fd054976ad1e.jpg',
+            fallback: 'https://placehold.co/400x400/3b82f6/ffffff?text=Peter+%26+MJ+%232',
+            alt: 'Mirror selfie Tom Holland berkostum Spider-Man dan Zendaya'
+          },
+          {
+            src: 'https://i.pinimg.com/1200x/97/0b/91/970b91eb8a0ca747b828d4caf6d8597e.jpg',
+            fallback: 'https://placehold.co/400x400/ff85b3/1e1b2e?text=Peter+%26+MJ+%233',
+            alt: 'MJ membaca koran di samping Peter Parker'
+          },
+          {
+            src: 'https://i.pinimg.com/736x/ea/1f/64/ea1f64c511c713ded3278a318e0775aa.jpg',
+            fallback: 'https://placehold.co/400x400/fde047/1e1b2e?text=Peter+%26+MJ+%234',
+            alt: 'Scene romantis Peter Parker dan MJ di laboratorium'
+          }
+        ]
+      };
+
+      /* ----------------------------------------------------------------------
+         1. RENDER DEFAULT DATA & PETER + MJ ROMANTIC MOVIE SCENES
+         ---------------------------------------------------------------------- */
+      function renderUI() {
+        const name = GIFT_CONFIG.partnerName;
+        document.getElementById('partner-name-hero').textContent = name;
+        document.getElementById('letter-modal-title').textContent = `HAPPY ANNIVERSARY, ${name.toUpperCase()}!`;
+        document.getElementById('letter-modal-body').textContent = GIFT_CONFIG.letterBody;
+        document.getElementById('letter-modal-sign').textContent = GIFT_CONFIG.letterSign;
+        document.getElementById('anniv-date-badge').textContent = `Since ${GIFT_CONFIG.annivDate} ♥`;
+
+        for (let i = 0; i < 4; i++) {
+          const box = document.getElementById(`polaroid-img-${i}`);
+          const photo = GIFT_CONFIG.photos[i];
+          if (!box || !photo) continue;
+          box.innerHTML = `<img src="${photo.src}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${photo.fallback}';" alt="${photo.alt}" class="couple-photo" />`;
+        }
+      }
+
+      /* ----------------------------------------------------------------------
+         2. LIVE ANNIVERSARY COUNT-UP TIMER
+         ---------------------------------------------------------------------- */
+      function updateTimer() {
+        const start = new Date(GIFT_CONFIG.annivDate + 'T00:00:00');
+        const now = new Date();
+        const diffMs = Math.max(0, now - start);
+
+        const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diffMs / (1000 * 60)) % 60);
+        const secs = Math.floor((diffMs / 1000) % 60);
+
+        document.getElementById('timer-days').textContent = String(days);
+        document.getElementById('timer-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('timer-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('timer-secs').textContent = String(secs).padStart(2, '0');
+      }
+      setInterval(updateTimer, 1000);
+
+      /* ----------------------------------------------------------------------
+         3. REAL SONG BACKSOUND: "SUNFLOWER" (POST MALONE & SWAE LEE)
+         ---------------------------------------------------------------------- */
+      const ARCHIVE_ITEM_ID = 'post-malone-swae-lee-sunflower-spider-man-int-mp-3-128-k';
+      const sunflowerPlayer = document.getElementById('sunflower-audio-player');
+      let isPlaying = false;
+
+      // Resolve exact MP3 filename dynamically from Internet Archive metadata API
+      async function resolveSunflowerAudioStream() {
+        if (!sunflowerPlayer) return;
+        try {
+          const res = await fetch(`https://archive.org/metadata/${ARCHIVE_ITEM_ID}`);
+          if (!res.ok) return;
+          const meta = await res.json();
+          const files = Array.isArray(meta.files) ? meta.files : [];
+          const mp3File = files.find((f) => typeof f.name === 'string' && f.name.toLowerCase().endsWith('.mp3'));
+          if (mp3File) {
+            const resolvedUrl = `https://archive.org/download/${ARCHIVE_ITEM_ID}/${encodeURIComponent(mp3File.name)}`;
+            if (sunflowerPlayer.src !== resolvedUrl) {
+              const wasPlaying = !sunflowerPlayer.paused;
+              sunflowerPlayer.src = resolvedUrl;
+              if (wasPlaying) {
+                sunflowerPlayer.play().catch(() => { });
+              }
+            }
+          }
+        } catch (e) {
+          // Keep default initial src if metadata fetch is blocked
+        }
+      }
+
+      function updateMusicControlsUI(playing) {
+        const icon = document.getElementById('music-icon');
+        const label = document.getElementById('music-label');
+        const playSym = document.getElementById('sunflower-play-symbol');
+        const eq = document.getElementById('sunflower-eq');
+        const sub = document.getElementById('sunflower-track-subtitle');
+
+        if (playing) {
+          if (icon) icon.textContent = '🌻';
+          if (label) label.textContent = 'Sunflower ♥';
+          if (playSym) playSym.textContent = '⏸';
+          if (sub) sub.textContent = 'Sedang memutar: Sunflower — Post Malone & Swae Lee';
+          eq?.classList.add('eq-playing');
+        } else {
+          if (icon) icon.textContent = '🌻';
+          if (label) label.textContent = 'Play Sunflower';
+          if (playSym) playSym.textContent = '▶';
+          if (sub) sub.textContent = 'OST Spider-Man: Into the Spider-Verse • Tap ▶ untuk putar lagu asli';
+          eq?.classList.remove('eq-playing');
+        }
+      }
+
+      function playSunflowerSong() {
+        if (!sunflowerPlayer) return;
+        sunflowerPlayer.muted = false;
+        sunflowerPlayer.volume = 0.85;
+        const playPromise = sunflowerPlayer.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise
+            .then(() => {
+              isPlaying = true;
+              updateMusicControlsUI(true);
+            })
+            .catch(() => {
+              sunflowerPlayer.muted = true;
+              sunflowerPlayer.play().catch(() => { });
+              isPlaying = false;
+              updateMusicControlsUI(false);
+              const sub = document.getElementById('sunflower-track-subtitle');
+              if (sub) {
+                sub.textContent = 'Tap di mana saja untuk aktifkan suara Sunflower 🌻🔊';
+              }
+            });
+        }
+      }
+
+      function unlockAutoplayOnGesture() {
+        if (!sunflowerPlayer) return;
+        if (sunflowerPlayer.paused || sunflowerPlayer.muted) {
+          playSunflowerSong();
+        }
+      }
+
+      function toggleMusic() {
+        if (!sunflowerPlayer) return;
+        if (!sunflowerPlayer.paused && !sunflowerPlayer.muted) {
+          sunflowerPlayer.pause();
+          isPlaying = false;
+          updateMusicControlsUI(false);
+        } else {
+          playSunflowerSong();
+        }
+      }
+
+      sunflowerPlayer?.addEventListener('play', () => {
+        isPlaying = true;
+        updateMusicControlsUI(true);
+      });
+
+      sunflowerPlayer?.addEventListener('pause', () => {
+        isPlaying = false;
+        updateMusicControlsUI(false);
+      });
+
+      /* ----------------------------------------------------------------------
+         4. INTERACTIVE WEB-SHOOTER CANVAS & "THWIP!" SFX ON SCREEN TAP
+         ---------------------------------------------------------------------- */
+      let sfxAudioCtx = null;
+      function playThwipSound() {
+        try {
+          if (!sfxAudioCtx) {
+            const Ctx = window.AudioContext || window.webkitAudioContext;
+            if (Ctx) sfxAudioCtx = new Ctx();
+          }
+          if (!sfxAudioCtx) return;
+          if (sfxAudioCtx.state === 'suspended') sfxAudioCtx.resume();
+
+          const now = sfxAudioCtx.currentTime;
+          const osc = sfxAudioCtx.createOscillator();
+          const gain = sfxAudioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(320, now);
+          osc.frequency.exponentialRampToValueAtTime(1250, now + 0.14);
+          gain.gain.setValueAtTime(0.04, now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.16);
+          osc.connect(gain);
+          gain.connect(sfxAudioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.18);
+        } catch (e) { }
+      }
+
+      const webCanvas = document.getElementById('web-shooter-canvas');
+      const webCtx = webCanvas.getContext('2d');
+      let webLines = [];
+
+      function resizeWebCanvas() {
+        webCanvas.width = window.innerWidth;
+        webCanvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeWebCanvas);
+      resizeWebCanvas();
+
+      function shootWebTo(targetX, targetY) {
+        const fromLeft = targetX < window.innerWidth / 2;
+        const startX = fromLeft ? 0 : window.innerWidth;
+        const startY = window.innerHeight;
+
+        webLines.push({
+          x1: startX,
+          y1: startY,
+          x2: targetX,
+          y2: targetY,
+          alpha: 1
+        });
+
+        const badges = [
+          { text: 'THWIP! ♥', bg: '#fde047' },
+          { text: 'LOVE YOU!', bg: '#ff85b3' },
+          { text: 'PETER & MJ ♥', bg: '#38bdf8' },
+          { text: 'SUNFLOWER 🌻', bg: '#ffffff' }
+        ];
+        const pick = badges[Math.floor(Math.random() * badges.length)];
+        const el = document.createElement('div');
+        el.className = 'comic-sfx-badge';
+        el.textContent = pick.text;
+        el.style.left = `${targetX}px`;
+        el.style.top = `${targetY}px`;
+        el.style.backgroundColor = pick.bg;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 860);
+      }
+
+      function animateWebLines() {
+        webCtx.clearRect(0, 0, webCanvas.width, webCanvas.height);
+        webLines = webLines.filter((w) => w.alpha > 0.02);
+
+        webLines.forEach((w) => {
+          webCtx.save();
+          webCtx.globalAlpha = w.alpha;
+          webCtx.strokeStyle = '#ffffff';
+          webCtx.lineWidth = 4;
+          webCtx.beginPath();
+          webCtx.moveTo(w.x1, w.y1);
+          webCtx.lineTo(w.x2, w.y2);
+          webCtx.stroke();
+
+          webCtx.strokeStyle = '#1e1b2e';
+          webCtx.lineWidth = 1.5;
+          webCtx.setLineDash([6, 4]);
+          webCtx.beginPath();
+          webCtx.moveTo(w.x1, w.y1);
+          webCtx.lineTo(w.x2, w.y2);
+          webCtx.stroke();
+          webCtx.restore();
+
+          w.alpha *= 0.92;
+        });
+
+        requestAnimationFrame(animateWebLines);
+      }
+      animateWebLines();
+
+      document.addEventListener('click', (e) => {
+        unlockAutoplayOnGesture();
+        if (e.target.closest('button, label, input, textarea, .modal-backdrop.active')) return;
+        playThwipSound();
+        shootWebTo(e.clientX, e.clientY);
+      });
+
+      /* ----------------------------------------------------------------------
+         5. MINI-GAME LUCU: CATCH SPIDEY'S HEARTS!
+         ---------------------------------------------------------------------- */
+      const gameCanvas = document.getElementById('spidey-mini-game');
+      const gCtx = gameCanvas.getContext('2d');
+      let gameRunning = false;
+      let gameScore = 0;
+      let playerX = 0.5;
+      let moveDir = 0;
+      let fallingItems = [];
+      let gameAnimId = null;
+
+      function resizeGameCanvas() {
+        const rect = gameCanvas.getBoundingClientRect();
+        gameCanvas.width = rect.width || 360;
+        gameCanvas.height = rect.height || 224;
+      }
+      window.addEventListener('resize', resizeGameCanvas);
+      resizeGameCanvas();
+
+      function startMiniGame() {
+        resizeGameCanvas();
+        gameScore = 0;
+        playerX = 0.5;
+        fallingItems = [];
+        gameRunning = true;
+        document.getElementById('game-score-display').textContent = '0';
+        document.getElementById('game-overlay').classList.add('hidden');
+        if (gameAnimId) cancelAnimationFrame(gameAnimId);
+        gameLoop();
+      }
+
+      function spawnItem() {
+        const types = [
+          { emoji: '💖', points: 1 },
+          { emoji: '🌻', points: 1 },
+          { emoji: '🕷️', points: 1 },
+          { emoji: '🎃', points: -1 }
+        ];
+        const item = types[Math.floor(Math.random() * types.length)];
+        fallingItems.push({
+          x: 0.1 + Math.random() * 0.8,
+          y: -0.05,
+          speed: 0.008 + Math.random() * 0.006,
+          emoji: item.emoji,
+          points: item.points
+        });
+      }
+
+      function gameLoop() {
+        if (!gameRunning) return;
+        const w = gameCanvas.width;
+        const h = gameCanvas.height;
+
+        gCtx.clearRect(0, 0, w, h);
+
+        playerX = Math.max(0.1, Math.min(0.9, playerX + moveDir * 0.018));
+        const px = playerX * w;
+        const py = h - 32;
+
+        if (Math.random() < 0.045) spawnItem();
+
+        gCtx.fillStyle = '#ff3b5c';
+        gCtx.strokeStyle = '#1e1b2e';
+        gCtx.lineWidth = 3;
+        gCtx.beginPath();
+        gCtx.arc(px, py, 20, 0, Math.PI * 2);
+        gCtx.fill();
+        gCtx.stroke();
+
+        gCtx.fillStyle = '#ffffff';
+        gCtx.beginPath();
+        gCtx.ellipse(px - 7, py - 2, 5, 3.5, -0.3, 0, Math.PI * 2);
+        gCtx.ellipse(px + 7, py - 2, 5, 3.5, 0.3, 0, Math.PI * 2);
+        gCtx.fill();
+        gCtx.stroke();
+
+        gCtx.font = '24px sans-serif';
+        gCtx.textAlign = 'center';
+        gCtx.textBaseline = 'middle';
+
+        for (let i = fallingItems.length - 1; i >= 0; i--) {
+          const it = fallingItems[i];
+          it.y += it.speed;
+          const ix = it.x * w;
+          const iy = it.y * h;
+
+          gCtx.fillText(it.emoji, ix, iy);
+
+          if (Math.hypot(ix - px, iy - py) < 30) {
+            gameScore = Math.max(0, gameScore + it.points);
+            document.getElementById('game-score-display').textContent = String(gameScore);
+            fallingItems.splice(i, 1);
+
+            if (gameScore >= 10) {
+              gameRunning = false;
+              const ov = document.getElementById('game-overlay');
+              document.getElementById('game-overlay-title').textContent = 'YEAY! 10/10 HATI TERKUMPUL! 🎉';
+              document.getElementById('game-overlay-desc').textContent = 'Kamu menang Kupon Date Spesial dari Spidey!';
+              document.getElementById('start-game-btn').textContent = 'MAIN LAGI';
+              ov.classList.remove('hidden');
+              openModal('modal-voucher');
+              return;
+            }
+            continue;
+          }
+
+          if (it.y > 1.1) fallingItems.splice(i, 1);
+        }
+
+        gameAnimId = requestAnimationFrame(gameLoop);
+      }
+
+      /* ----------------------------------------------------------------------
+         6. MODAL & TOAST HELPERS
+         ---------------------------------------------------------------------- */
+      function openModal(id) {
+        document.getElementById(id)?.classList.add('active');
+      }
+
+      function closeModal(id) {
+        document.getElementById(id)?.classList.remove('active');
+      }
+
+      let toastTimeout = null;
+      function showToast(icon, msg) {
+        const pill = document.getElementById('toast-pill');
+        document.getElementById('toast-icon').textContent = icon;
+        document.getElementById('toast-msg').textContent = msg;
+        pill.style.opacity = '1';
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          pill.style.opacity = '0';
+        }, 2600);
+      }
+
+      /* ----------------------------------------------------------------------
+         7. BIND EVENTS ON WINDOW LOAD
+         ---------------------------------------------------------------------- */
+      window.addEventListener('DOMContentLoaded', () => {
+        renderUI();
+        updateTimer();
+        resolveSunflowerAudioStream();
+        playSunflowerSong();
+
+        sunflowerPlayer?.addEventListener(
+          'canplay',
+          () => {
+            if (!isPlaying) playSunflowerSong();
+          },
+          { once: true }
+        );
+
+        ['pointerdown', 'touchstart', 'keydown'].forEach((evt) => {
+          window.addEventListener(evt, unlockAutoplayOnGesture, { once: true, passive: true });
+        });
+
+        document.getElementById('chibi-spidey-btn')?.addEventListener('click', () => {
+          const badge = document.getElementById('spidey-heart-badge');
+          if (badge) badge.textContent = '😍';
+          showToast('😍', `Spidey jatuh cinta sama ${GIFT_CONFIG.partnerName}!`);
+          setTimeout(() => {
+            if (badge) badge.textContent = '🕷️';
+          }, 1500);
+        });
+
+        document.getElementById('chibi-gwen-btn')?.addEventListener('click', () => {
+          showToast('💖', 'MJ mengirim pelukan hangat!');
+        });
+
+        document.getElementById('music-toggle-btn')?.addEventListener('click', toggleMusic);
+        document.getElementById('sunflower-card-play-btn')?.addEventListener('click', toggleMusic);
+
+        document.getElementById('open-love-letter-btn')?.addEventListener('click', () => {
+          openModal('modal-letter');
+        });
+
+        document.getElementById('start-game-btn')?.addEventListener('click', startMiniGame);
+        const btnLeft = document.getElementById('btn-move-left');
+        const btnRight = document.getElementById('btn-move-right');
+
+        btnLeft?.addEventListener('pointerdown', () => (moveDir = -1));
+        btnLeft?.addEventListener('pointerup', () => (moveDir = 0));
+        btnLeft?.addEventListener('pointerleave', () => (moveDir = 0));
+
+        btnRight?.addEventListener('pointerdown', () => (moveDir = 1));
+        btnRight?.addEventListener('pointerup', () => (moveDir = 0));
+        btnRight?.addEventListener('pointerleave', () => (moveDir = 0));
+
+        gameCanvas.addEventListener(
+          'touchmove',
+          (e) => {
+            if (!gameRunning) return;
+            const rect = gameCanvas.getBoundingClientRect();
+            const touchX = e.touches[0].clientX - rect.left;
+            playerX = Math.max(0.1, Math.min(0.9, touchX / rect.width));
+          },
+          { passive: true }
+        );
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') moveDir = -1;
+          if (e.key === 'ArrowRight') moveDir = 1;
+        });
+        window.addEventListener('keyup', (e) => {
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') moveDir = 0;
+        });
+
+        document.querySelectorAll('[data-close-modal]').forEach((btn) => {
+          btn.addEventListener('click', () => closeModal(btn.getAttribute('data-close-modal')));
+        });
+        document.querySelectorAll('.modal-backdrop').forEach((bg) => {
+          bg.addEventListener('click', (e) => {
+            if (e.target === bg) bg.classList.remove('active');
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
